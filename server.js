@@ -27,7 +27,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 //Enable CORS
-app.use(cors())
+app.use(cors());
 
 /* Routes */
 
@@ -46,22 +46,17 @@ router.route('/municipios')
 router.route('/orgaos')
   .get(orgaos.list);
 
-router.route('/despesas/:orgaoId')
+router.route('/despesas/:municipioId')
   .get(despesas.list);
+
+router.route('/despesas/:municipioId/:orgaoId/:ano')
+  .get(despesas.list);
+
+router.route('/despesas/:municipioId/:orgaoId/:ano/:mes/:tipoDespesa')
+  .get(despesas.list);  
 
 //All routes prefixed with /api
 app.use('/api', router);
-
-/* Database connection */
-
-//mongoose.connect('mongodb://'+config.db.mongodb.HOST+'/'+config.db.mongodb.DATABASE_NAME);
-
-var db = mongoose.connection;
-db.on('error', console.error.bind(console, 'connection error:'));
-db.once('open', function() {
-  console.log('Database open');
-});
-
 
 /* Server starting */
 
