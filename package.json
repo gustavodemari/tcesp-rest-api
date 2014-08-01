@@ -5,7 +5,7 @@
   "main": "",
   "scripts": {
     "test": "mocha tests/api.js -R spec",
-    "start": "npm test & node server.js"
+    "start": "node server.js"
   },
   "keywords": [
     "express",
