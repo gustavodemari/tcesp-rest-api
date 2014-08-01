@@ -6,7 +6,6 @@ var config = require('./configs/config.js');
 var express = require('express');
 var router = express.Router();
 var bodyParser = require('body-parser');
-var mongoose = require('mongoose');
 var cors = require('cors');
 
 /* Controller loading */
