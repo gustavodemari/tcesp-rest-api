@@ -16,6 +16,7 @@
   "license": "MIT",
   "dependencies": {
     "express": "4.x.x",
+    "mongoose": "~3.8.13",
     "body-parser": "~1.4.3",
     "cors": "~2.4.1"
   },
