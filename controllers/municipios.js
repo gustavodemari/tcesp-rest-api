@@ -9,7 +9,7 @@ function municipiosRequest(callback){
     });
     res.on('end', function(){
       callback(body);
-    })
+    });
   }).on('error', function(e) {
     console.log('Request error');
   });
@@ -22,6 +22,4 @@ module.exports = {
       res.send(utils.adjustRequestJSON(body));
     });
   }
-}
-
-
+};
