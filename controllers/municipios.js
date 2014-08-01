@@ -1,11 +1,9 @@
 var http = require('http');
 var utils = require('./utils.js');
 
-const API_URL = 'http://www.portaldocidadao.tce.sp.gov.br';
-
 function municipiosRequest(callback){
   var body = '';
-  http.get(API_URL+'/api_json_municipios', function(res) {
+  http.get(utils.API_URL+'/api_json_municipios', function(res) {
     res.on('data', function(chunk){
       body += chunk;
     });
