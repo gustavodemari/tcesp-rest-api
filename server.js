@@ -14,6 +14,7 @@ var cors = require('cors');
 var users = require('./controllers/users.js');
 var municipios = require('./controllers/municipios.js');
 var orgaos = require('./controllers/orgaos.js');
+var despesas = require('./controllers/despesas.js');
 
 /* Module starting */
 
@@ -44,6 +45,9 @@ router.route('/municipios')
 
 router.route('/orgaos')
   .get(orgaos.list);
+
+router.route('/despesas/:orgaoId')
+  .get(despesas.list);
 
 //All routes prefixed with /api
 app.use('/api', router);
