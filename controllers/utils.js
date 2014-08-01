@@ -1,3 +1,5 @@
+exports.API_URL = 'http://www.portaldocidadao.tce.sp.gov.br';
+
 exports.adjustRequestJSON = function (json){
   var i = 0;
   var adjusted = [];
