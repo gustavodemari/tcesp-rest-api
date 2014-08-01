@@ -8,12 +8,12 @@ var router = express.Router();
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var cors = require('cors');
-var http = require('http');
 
 /* Controller loading */
 
 var users = require('./controllers/users.js');
 var municipios = require('./controllers/municipios.js');
+var orgaos = require('./controllers/orgaos.js');
 
 /* Module starting */
 
@@ -41,6 +41,9 @@ router.route('/users/:userId')
 
 router.route('/municipios')
   .get(municipios.list);
+
+router.route('/orgaos')
+  .get(orgaos.list);
 
 //All routes prefixed with /api
 app.use('/api', router);
