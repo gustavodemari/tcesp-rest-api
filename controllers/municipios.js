@@ -1,5 +1,6 @@
 var http = require('http');
 var utils = require('./utils.js');
+var municipios = [];
 
 function municipiosRequest(callback){
   var body = '';
@@ -17,9 +18,16 @@ function municipiosRequest(callback){
 
 module.exports = {
   list: function(req, res){
-    municipiosRequest(function(body){
+    if(municipios.length === 0){
+      municipiosRequest(function(body){
+        municipios = utils.adjustRequestJSON(body);
+        res.status(200);
+        res.send(municipios);
+      });
+    }
+    else {
       res.status(200);
-      res.send(utils.adjustRequestJSON(body));
-    });
+      res.send(municipios);
+    }
   }
 };
